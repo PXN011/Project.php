@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>estilização com js</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+<!--este codigo fara com que a caixa descrita fique na cor verde, gerando um elemento quadrado que ao clicar nele ira anima-lo atribuindo assim cor.-->
+<script>
+function gerarQuadrado() {
+    var boxElement = document.createElement('div');
+    boxElement.style.height = '100px';
+    boxElement.style.width = '100px';
+    boxElement.style.backgroundColor = '#2d853b';
+    boxElement.style.margin = '10px';
+    boxElement.setAttribute('class', 'box');
+    boxElement.setAttribute('onclick', 'mudarCor(this)');
+
+    var divElement = document.querySelector('div#app');
+    divElement.appendChild(boxElement);
+}
+
+function mudarCor(box) {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {   
+        color += letters[Math.floor(Math.random() * 16)];  
+    }
+    box.style.backgroundColor = color;
+}
+gerarQuadrado();
+
+</script> 
